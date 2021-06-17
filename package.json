@@ -1,13 +1,16 @@
 {
   "name": "react-secure-route",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "private": false,
   "description": "React router package which provide private, public and protected routes with restricted functionality. which helps to authenticate different routes in react App.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
-    "start:dev": "webpack serve --mode development --env development --config webpack.config.dev.js --progress",
+    "start:dev": "webpack serve --mode development --env development --config webpack.config.dev.js --hot --inline --history-api-fallback",
     "start": "webpack --mode development",
     "start:watch": "webpack --mode development --watch",
     "build": "webpack --mode production",
@@ -55,6 +58,24 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-router-dom": "^5.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
